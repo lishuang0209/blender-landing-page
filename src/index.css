@@ -318,8 +318,14 @@ button, a { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .zeyna-heading > div > span { color: #8f8e98; font-size: 9px; letter-spacing: .09em; }
 .zeyna-heading h2 { font-size: clamp(30px,3vw,48px); line-height: 1.05; letter-spacing: -.045em; font-weight: 400; margin-top: 16px; }
 .zeyna-heading p { font-size: 12px; line-height: 1.6; color: #8f8e98; }
-.zeyna-carousel { padding-top: 13.5px; }
-.zeyna-stage { height: clamp(540px,68vh,700px); position: relative; overflow: hidden; touch-action: pan-y; user-select: none; cursor: grab; }
+/* Halve the heading-to-poster gap without resizing the cards or their canvas. */
+.zeyna-carousel {
+  --gallery-stage-height: clamp(540px,68vh,700px);
+  --gallery-card-height: min(420px,calc(var(--gallery-stage-height) * .7));
+  padding-top: 13.5px;
+  margin-top: calc(-27.75px - (var(--gallery-stage-height) - var(--gallery-card-height)) / 4);
+}
+.zeyna-stage { height: var(--gallery-stage-height); position: relative; overflow: hidden; touch-action: pan-y; user-select: none; cursor: grab; }
 .zeyna-stage.is-dragging, .zeyna-stage.is-dragging button { cursor: grabbing; }
 .zeyna-stage:focus-visible { outline: 1px solid #777680; outline-offset: -6px; }
 .zeyna-canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity .65s; pointer-events: none; }
