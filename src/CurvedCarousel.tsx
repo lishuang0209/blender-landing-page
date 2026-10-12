@@ -221,7 +221,6 @@ export function CurvedCarousel({works,onSelect}:Props){
   },[works]);
   const select=(index:number)=>host.current?.dispatchEvent(new CustomEvent('zeyna-select',{detail:wrap(index,works.length)}));
   return <div className="zeyna-carousel" role="region" aria-label="Blender artwork carousel">
-    <div className="zeyna-topline"><span>A COLLECTION IN MOTION / {String(works.length).padStart(2,'0')} ARTWORKS</span><span>DRAG OR SCROLL TO EXPLORE ↔</span></div>
     <div ref={host} className={`zeyna-stage ${ready&&!failed?'is-ready':''}`} tabIndex={0} aria-label="Drag, scroll or use arrow keys to browse artworks">
       <canvas ref={canvas} className="zeyna-canvas" aria-hidden="true" />
       {renderedWorks.map((work,i)=><button key={`${work.poster}-${i}`} ref={node=>{slides.current[i]=node;}} className="zeyna-card" aria-label={`View ${work.title}`} onClick={event=>{if(event.currentTarget.getAttribute('aria-current')!=='true')select(i);else onSelect(work,event.currentTarget);}}>

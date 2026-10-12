@@ -30,7 +30,6 @@ export function App() {
   return <div id="home" className="site-shell">
     <header className="site-header">
       <a href="#home" className="wordmark" aria-label="Blender home"><img src={`${import.meta.env.BASE_URL}blender-official-icon.svg`} width="32" height="32" alt="" aria-hidden="true" />BLENDER</a>
-      <p className="header-description">The freedom to create 3D worlds, and bring your imagination to life.</p>
       <div className="header-actions">
         <a className="header-pill" href={DOWNLOAD} target="_blank" rel="noreferrer">GET BLENDER <span aria-hidden="true">↗</span></a>
         <button ref={menuButton} className="menu-pill" type="button" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} aria-controls="site-menu" onClick={() => setMenuOpen(value => !value)}>MENU <span aria-hidden="true">••</span></button>
@@ -49,12 +48,10 @@ export function App() {
     <main>
       <section className="hero-card" aria-labelledby="hero-title">
         <MouseScrubVideo />
-        <div className="hero-topline"><span>FREE. OPEN SOURCE. LIMITLESS.</span><span className="hero-interaction">MOVE YOUR MOUSE TO EXPLORE <span aria-hidden="true">↔</span></span></div>
         <div className="hero-copy">
           <h1 id="hero-title">A world of ideas.<br />Made in 3D.</h1>
           <p>Meet Blender. Your imagination,<br />from the first idea to the final frame.</p>
         </div>
-        <span className="hero-index" aria-hidden="true">01 / CREATIVE FREEDOM</span>
       </section>
 
       <a href="#learn" className="scroll-cue"><span aria-hidden="true">+</span><span>SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span><span aria-hidden="true">+</span></a>

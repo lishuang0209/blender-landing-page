@@ -38,10 +38,6 @@ export function WorkCarousel({ works, onSelect }: Props) {
   }, []);
 
   return <div ref={host} className="work-carousel flip-gallery">
-    <div className="flip-gallery-topline">
-      <span>THE ART OF POSSIBILITY / {String(displayedWorks.length).padStart(2, '0')} SELECTED WORKS</span>
-      <span>HOVER TO FLIP · CLICK TO LOOK CLOSER ↗</span>
-    </div>
     <div className="flip-gallery-grid">
       {displayedWorks.map((work, index) => {
         const open = active === index;

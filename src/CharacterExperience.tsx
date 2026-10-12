@@ -122,7 +122,6 @@ export function CharacterExperience() {
           </div>
         </div>
         <div className="experience-headline" aria-hidden="true"><span>STEP INTO A NEW WORLD</span><span>AND LET YOUR</span><span>IMAGINATION RUN WILD</span></div>
-        <div className="experience-card-caption"><span>ONE CHARACTER. ENDLESS POSSIBILITIES.</span><span>SCROLL TO BRING HER WORLD TO LIFE ↓</span></div>
         <div className="experience-finish-cue" aria-hidden="true">KEEP EXPLORING <span>↓</span></div>
       </div>
     </div>
