@@ -74,12 +74,16 @@ export function FilmJourney() {
         const ringY = mix(height * 1.28, height * .48, lift) - departure * height * .98 + (Math.sin(angle) * height * .13 + Math.cos(angle) * height * .065) * scale;
         const ringZ = Math.cos(angle) * Math.min(width * .22, 320) * scale;
         const columns = mobile ? 2 : 3;
-        const gridWidth = width * (mobile ? .90 : .66);
-        const gap = mobile ? 8 : 12;
+        // Restore the reference wall proportions without changing the arc motion.
+        const gridWidth = width * (mobile ? .90 : .724);
+        const gap = mobile ? 8 : width * .01;
         const wallWidth = (gridWidth - (columns - 1) * gap) / columns;
-        const rowHeight = wallWidth * 9 / 16;
+        const wallAspect = mobile ? 9 / 16 : .70;
+        const rowHeight = wallWidth * wallAspect;
+        const gridHeight = Math.ceil(FINAL_FILM_COUNT / columns) * rowHeight + (Math.ceil(FINAL_FILM_COUNT / columns) - 1) * gap;
         const wallX = (width - gridWidth) / 2 + wallWidth / 2 + (i % columns) * (wallWidth + gap);
-        const wallY = height * (mobile ? .24 : .22) + rowHeight / 2 + Math.floor(i / columns) * (rowHeight + gap);
+        const wallTop = mobile ? height * .24 : (height - gridHeight) / 2;
+        const wallY = wallTop + rowHeight / 2 + Math.floor(i / columns) * (rowHeight + gap);
         const cardUnfold = selected ? phase(p, .54 + i * .007, .65 + i * .007) : 0;
         const cardWidth = mix(width * (mobile ? .36 : .16) * scale, wallWidth, cardUnfold);
         const x = mix(ringX, wallX, cardUnfold);
@@ -89,7 +93,7 @@ export function FilmJourney() {
         const rotateZ = mix(12 - departure * 24, 0, cardUnfold);
         card.style.zIndex = String(Math.round(z + 1000));
         card.style.width = `${cardWidth}px`;
-        card.style.height = `${cardWidth * 9 / 16}px`;
+        card.style.height = `${cardWidth * mix(9 / 16, wallAspect, cardUnfold)}px`;
         card.style.opacity = String(opacity);
         card.style.visibility = opacity < .001 ? 'hidden' : 'visible';
         card.setAttribute('aria-hidden', String(opacity < .001));

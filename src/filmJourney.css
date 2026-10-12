@@ -46,11 +46,12 @@
   .film-motion-title > span > span { transform: none; }
   .film-motion-center, .film-motion-orbits, .film-motion-shutters { display: none; }
   .film-motion-cards { position: relative; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
-  .film-motion-card { position: relative; width: 100% !important; height: auto !important; opacity: 1 !important; transform: none !important; }
+  .film-motion-card { position: relative; width: 100% !important; height: auto !important; aspect-ratio: 10 / 7; opacity: 1 !important; transform: none !important; }
   .film-motion-card.is-transient { display: none; }
   .film-motion-footnote { position: relative; inset: auto; margin-top: 30px; opacity: 1; }
 }
 
 @media (max-width: 767px) and (prefers-reduced-motion: reduce) {
   .film-motion-cards { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .film-motion-card { aspect-ratio: 16 / 9; }
 }
