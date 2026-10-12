@@ -54,7 +54,7 @@ export function App() {
         </div>
       </section>
 
-      <a href="#learn" className="scroll-cue"><span aria-hidden="true">+</span><span>SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span><span aria-hidden="true">+</span></a>
+      <div className="scroll-cue" aria-hidden="true"><span>+</span><span>+</span></div>
 
       <Showcase />
     </main>
