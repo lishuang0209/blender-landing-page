@@ -172,15 +172,13 @@ button, a { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .reel-controls button:hover { background: #fff; color: #161619; }
 .reel-error { position: absolute; top: 100px; left: 34px; }
 .selected-work { padding: 110px 36px 140px; scroll-margin-top: 40px; }
-.work-heading { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 7vw; margin-bottom: 85px; }
+.work-heading { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 7vw; margin-bottom: 64px; }
 .work-heading .story-title { width: calc(100% + 7vw); }
 .toolkit-heading h2 { font-size: clamp(45px, 5vw, 82px); line-height: 1.04; letter-spacing: -.065em; font-weight: 500; }
 .work-artwork { position: absolute; inset: 0; overflow: hidden; }
 .work-artwork img { position: absolute; left: var(--image-left,50%); top: var(--image-top); height: var(--image-height); width: auto; max-width: none; transform: translateX(-50%); }
 /* Artwork flip gallery: independent of the hero, reel and surrounding sections. */
 .work-carousel { width: 100%; }
-/* Retain gallery alignment after removing the small instruction rows. */
-.flip-gallery { padding-top: 43px; }
 .flip-gallery-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 38px 30px; width: 100%; margin: 0; perspective: 1800px; }
 /* Entry and flip use separate wrappers so their transforms never compete. */
 .art-flip-entry { opacity: 0; transform: translateY(52px) rotateX(-8deg); transition: opacity .85s ease var(--entry-delay), transform .85s cubic-bezier(.22,1,.36,1) var(--entry-delay); }
