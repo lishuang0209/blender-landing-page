@@ -310,7 +310,7 @@ button, a { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 }
 
 /* Additional Zeyna-inspired gallery. Existing flip cards and sections stay untouched. */
-.zeyna-showcase { color: #f4f3f6; background: #111113; border-radius: 32px; overflow: hidden; margin-bottom: 100px; padding: 44px 0 32px; scroll-margin-top: 30px; }
+.zeyna-showcase { color: #f4f3f6; background: #111113; border-radius: 32px; overflow: hidden; margin-bottom: 60px; padding: 44px 0 32px; scroll-margin-top: 30px; }
 .zeyna-heading { padding: 0 36px; display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 42px; }
 .zeyna-heading > div > span { color: #8f8e98; font-size: 9px; letter-spacing: .09em; }
 .zeyna-heading h2 { font-size: clamp(30px,3vw,48px); line-height: 1.05; letter-spacing: -.045em; font-weight: 400; margin-top: 16px; }
